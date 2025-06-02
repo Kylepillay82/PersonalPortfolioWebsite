@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +8,7 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
   <header>
@@ -22,14 +24,17 @@
     </nav>
     <div class="hero">
       <h1>Hi, I'm <span>Kyle Pillay</span></h1>
-      <p>Creative Developer | UI/UX Designer | Student</p>
+      <p><span class="typed-text"></span><span class="cursor">|</span></p>
     </div>
   </header>
 
   <section id="about" class="section">
     <h2>About Me</h2>
-    <p>I'm Kyle Pillay, a passionate student and developer who enjoys bringing creative ideas to life with code. I'm currently exploring web design, development, and cybersecurity. I enjoy solving problems, creating user-friendly interfaces, and learning new technologies.</p>
-    <p>Outside of tech, I love expressing myself through art, storytelling, and helping others. My drive comes from curiosity, compassion, and a vision to make the web more accessible and beautiful.</p>
+    <p>I'm Kyle Pillay, a passionate student and developer who enjoys bringing creative ideas to life with code. I'm
+      currently exploring web design, development, and cybersecurity. I enjoy solving problems, creating user-friendly
+      interfaces, and learning new technologies.</p>
+    <p>Outside of tech, I love expressing myself through art, storytelling, and helping others. My drive comes from
+      curiosity, compassion, and a vision to make the web more accessible and beautiful.</p>
   </section>
 
   <section id="skills" class="section bg-light">
@@ -37,35 +42,69 @@
     <div class="skills">
       <div class="skill">
         <h4>HTML & CSS</h4>
-        <div class="bar"><div class="fill" style="width: 90%;"></div></div>
+        <div class="bar">
+          <div class="fill" style="width: 90%;"></div>
+        </div>
       </div>
       <div class="skill">
         <h4>JavaScript</h4>
-        <div class="bar"><div class="fill" style="width: 75%;"></div></div>
+        <div class="bar">
+          <div class="fill" style="width: 75%;"></div>
+        </div>
       </div>
       <div class="skill">
         <h4>C# & ASP.NET</h4>
-        <div class="bar"><div class="fill" style="width: 80%;"></div></div>
+        <div class="bar">
+          <div class="fill" style="width: 80%;"></div>
+        </div>
       </div>
       <div class="skill">
         <h4>UI/UX Design</h4>
-        <div class="bar"><div class="fill" style="width: 85%;"></div></div>
+        <div class="bar">
+          <div class="fill" style="width: 85%;"></div>
+        </div>
       </div>
       <div class="skill">
         <h4>Cybersecurity Awareness</h4>
-        <div class="bar"><div class="fill" style="width: 70%;"></div></div>
+        <div class="bar">
+          <div class="fill" style="width: 70%;"></div>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="hobbies" class="section">
     <h2>My Hobbies</h2>
-    <p>In my free time, I enjoy painting, reading Christian books, coding fun projects, and exploring new music. I also love teaching younger kids and helping others understand technology. Creativity and compassion drive my hobbies!</p>
+    <p>In my free time, I enjoy painting, reading Christian books, coding fun projects, and exploring new music. I also
+      love teaching younger kids and helping others understand technology. Creativity and compassion drive my hobbies!
+    </p>
   </section>
 
-  <section id="talents" class="section bg-light">
+  <section id="testimonials" class="section bg-light">
+    <h2>My Testimonials</h2>
+    <div class="testimonial-slider">
+      <div class="testimonial active">
+        <p>"Kyle is an amazing developer with a great eye for design. She brings creativity and professionalism to every
+          project."</p>
+        <h4>- Sarah M.</h4>
+      </div>
+      <div class="testimonial">
+        <p>"Working with Kyle was a pleasure! Her problem-solving skills and positive attitude make her stand out."</p>
+        <h4>- James T.</h4>
+      </div>
+      <div class="testimonial">
+        <p>"Kyle’s passion for learning and helping others is truly inspiring. Highly recommend her for any design or
+          coding work."</p>
+        <h4>- Aisha K.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section id="talents" class="section">
     <h2>My Talents</h2>
-    <p>I'm a visual artist with a knack for painting on sneakers, boats, and murals. I also have strong communication skills and love public speaking. I adapt quickly, learn independently, and enjoy mentoring others through design and tech.</p>
+    <p>I'm a visual artist with a knack for painting on sneakers, boats, and murals. I also have strong communication
+      skills and love public speaking. I adapt quickly, learn independently, and enjoy mentoring others through design
+      and tech.</p>
   </section>
 
   <footer id="contact">
@@ -82,5 +121,59 @@
     </div>
   </footer>
 
+  <script>
+    // Typing effect
+    const phrases = ["Creative Developer", "UI/UX Designer", "Cybersecurity Enthusiast", "Student Coder"];
+    const typedText = document.querySelector(".typed-text");
+    let currentPhraseIndex = 0;
+    let currentLetterIndex = 0;
+    let isDeleting = false;
+
+    function type() {
+      const currentPhrase = phrases[currentPhraseIndex];
+      if (isDeleting) {
+        currentLetterIndex--;
+        if (currentLetterIndex < 0) {
+          isDeleting = false;
+          currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+          setTimeout(type, 300);
+          return;
+        }
+      } else {
+        currentLetterIndex++;
+        if (currentLetterIndex > currentPhrase.length) {
+          isDeleting = true;
+          setTimeout(type, 1000);
+          return;
+        }
+      }
+
+      typedText.textContent = currentPhrase.substring(0, currentLetterIndex);
+      setTimeout(type, isDeleting ? 50 : 100);
+    }
+
+    document.addEventListener("DOMContentLoaded", type);
+
+    // Testimonial Slideshow
+    let currentIndex = 0;
+    const testimonials = document.querySelectorAll(".testimonial");
+
+    function showTestimonial(index) {
+      testimonials.forEach((el, i) => {
+        el.classList.remove("active");
+        if (i === index) el.classList.add("active");
+      });
+    }
+
+    function nextTestimonial() {
+      currentIndex = (currentIndex + 1) % testimonials.length;
+      showTestimonial(currentIndex);
+    }
+
+    setInterval(nextTestimonial, 4000); // Change every 4 seconds
+    showTestimonial(currentIndex);
+  </script>
+
 </body>
+
 </html>
