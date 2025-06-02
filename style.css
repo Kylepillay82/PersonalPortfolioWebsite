@@ -167,8 +167,13 @@ nav {
 }
 
 @keyframes fade {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 /* ------------------------------
@@ -186,7 +191,8 @@ footer {
   margin-bottom: 10px;
 }
 
-.footer-container p, .footer-container a {
+.footer-container p,
+.footer-container a {
   color: #ddd;
   font-size: 1rem;
   text-decoration: none;
@@ -251,7 +257,8 @@ footer {
     gap: 40px;
   }
 
-  .about_image, .about_content {
+  .about_image,
+  .about_content {
     width: 100%;
   }
 
@@ -286,8 +293,17 @@ footer {
     font-size: 1.3rem;
   }
 
-  .footer-container p, .footer-container a {
+  .footer-container p,
+  .footer-container a {
     font-size: 0.9rem;
     text-align: center;
   }
+
+  /* Fixed navbar for small screen devices*/
+  .nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+  }
+
 }
