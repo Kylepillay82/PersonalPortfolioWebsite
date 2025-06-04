@@ -12,6 +12,13 @@
 <body>
 
   <header>
+    <!-- Video background -->
+    <video autoplay muted loop playsinline class="background-video">
+      <source src="media/5371973-uhd_3840_2024_30fps.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Navigation -->
     <nav class="navbar">
       <div class="logo"><a href="#">Kyle Pillay</a></div>
       <ul class="nav-menu">
@@ -22,8 +29,10 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+
+    <!-- Hero text -->
     <div class="hero">
-      <h1>Hi, I'm <span>Kyle Pillay</span></h1>
+      <h1>Hi, I'm <span>Kyle Pillay!</span></h1>
       <p><span class="typed-text"></span><span class="cursor">|</span></p>
     </div>
   </header>
@@ -33,7 +42,7 @@
     <p>I'm Kyle Pillay, a passionate student and developer who enjoys bringing creative ideas to life with code. I'm
       currently exploring web design, development, and cybersecurity. I enjoy solving problems, creating user-friendly
       interfaces, and learning new technologies.</p>
-    <p>Outside of tech, I love expressing myself through art, storytelling, and helping others. My drive comes from
+    <p>Outside of tech, I love expressing myself through music, storytelling, and helping others. My drive comes from
       curiosity, compassion, and a vision to make the web more accessible and beautiful.</p>
   </section>
 
@@ -65,9 +74,9 @@
         </div>
       </div>
       <div class="skill">
-        <h4>Cybersecurity Awareness</h4>
+        <h4>Social Skills</h4>
         <div class="bar">
-          <div class="fill" style="width: 70%;"></div>
+          <div class="fill" style="width: 90%;"></div>
         </div>
       </div>
     </div>
@@ -75,7 +84,7 @@
 
   <section id="hobbies" class="section">
     <h2>My Hobbies</h2>
-    <p>In my free time, I enjoy painting, reading Christian books, coding fun projects, and exploring new music. I also
+    <p>In my free time, I enjoy reading books, coding fun projects, and exploring new music. I also
       love teaching younger kids and helping others understand technology. Creativity and compassion drive my hobbies!
     </p>
   </section>
@@ -84,16 +93,16 @@
     <h2>My Testimonials</h2>
     <div class="testimonial-slider">
       <div class="testimonial active">
-        <p>"Kyle is an amazing developer with a great eye for design. She brings creativity and professionalism to every
+        <p>"Kyle is an amazing developer with a great eye for design. He brings creativity and professionalism to every
           project."</p>
         <h4>- Sarah M.</h4>
       </div>
       <div class="testimonial">
-        <p>"Working with Kyle was a pleasure! Her problem-solving skills and positive attitude make her stand out."</p>
+        <p>"Working with Kyle was a pleasure! His problem-solving skills and positive attitude make him stand out."</p>
         <h4>- James T.</h4>
       </div>
       <div class="testimonial">
-        <p>"Kyle’s passion for learning and helping others is truly inspiring. Highly recommend her for any design or
+        <p>"Kyle’s passion for learning and helping others is truly inspiring. Highly recommend him for any design or
           coding work."</p>
         <h4>- Aisha K.</h4>
       </div>
@@ -102,9 +111,30 @@
 
   <section id="talents" class="section">
     <h2>My Talents</h2>
-    <p>I'm a visual artist with a knack for painting on sneakers, boats, and murals. I also have strong communication
+    <p>I'm a artist with a knack for playing music and cooking tasty food. I also have strong communication
       skills and love public speaking. I adapt quickly, learn independently, and enjoy mentoring others through design
       and tech.</p>
+  </section>
+
+  <section class="section contact-section bg-light" id="contact">
+    <h2>Contact Me</h2>
+    <p>If you have any questions or want to work together, feel free to send a message!</p>
+    <form class="contact-form" action="https://formsubmit.co/kylepillay017@gmail.com" method="POST">
+      <!-- Optional: Add anti-bot field -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="box">
+
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Your Name" required>
+      </div>
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Your Email" required>
+      </div>
+      <div class="form-group">
+        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Send Message</button>
+    </form>
   </section>
 
   <footer id="contact">
@@ -123,7 +153,7 @@
 
   <script>
     // Typing effect
-    const phrases = ["Creative Developer", "UI/UX Designer", "Cybersecurity Enthusiast", "Student Coder"];
+    const phrases = ["SMART", "HARDWORKING", "FRIENDLY", "CREATIVE", "PASSIONATE"];
     const typedText = document.querySelector(".typed-text");
     let currentPhraseIndex = 0;
     let currentLetterIndex = 0;
@@ -170,7 +200,7 @@
       showTestimonial(currentIndex);
     }
 
-    setInterval(nextTestimonial, 4000); // Change every 4 seconds
+    setInterval(nextTestimonial, 3000); // Change every 4 seconds
     showTestimonial(currentIndex);
   </script>
 
